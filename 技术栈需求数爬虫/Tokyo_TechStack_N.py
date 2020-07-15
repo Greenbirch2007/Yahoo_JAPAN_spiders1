@@ -49,11 +49,15 @@ def writerDt_csv(headers, rowsdata):
 
 if __name__ == '__main__':
     big_list = []
-    TS_lang = 'Python,scrapy,seleinum,flask,sqlalchemy,Django,Golang,beego,buffalo,Echo,Gin,Iris,Revel,perl,java,spring,ruby,rust,C++,Github,git,AWS,Highcharts,pandas,numpy,TCP'
-    TS_db = 'mysql,mongodb,redis,Docker,k8s,Postgresql,Oracle'
-    TS_certificate = 'CentOS,LPIC,LPIC1,LPIC2,LPIC3,CCNA,CCNP,CFA,TOEIC'
-    f_FS =TS_lang+TS_db+TS_certificate
+    # TS_lang = 'Python,scrapy,seleinum,flask,sqlalchemy,Django,Golang,beego,buffalo,Echo,Gin,Iris,Revel,perl,java,spring,ruby,rust,C++,Github,git,AWS,Highcharts,pandas,numpy,TCP'
+    TS_lang = 'Python'
+    # TS_db = 'mysql,mongodb,redis,Docker,k8s,Postgresql,Oracle'
+    TS_db = 'mysql,mongodb'
+    # TS_certificate = 'CentOS,LPIC,LPIC1,LPIC2,LPIC3,CCNA,CCNP,CFA,TOEIC'
+    TS_certificate = 'CentOS'
+    f_FS =TS_lang+","+TS_db+","+TS_certificate
     f_tsn = f_FS.split(",")
+    headers = ["keyword","nums"]
     for code in f_tsn:
         url = 'https://job.yahoo.co.jp/jobs/?q=&l=%E6%9D%B1%E4%BA%AC%E9%83%BD&keyword={0}&side=1'.format(code)
 
@@ -70,7 +74,7 @@ if __name__ == '__main__':
     for i1,i2 in zip(f_tsn,big_list):
         ff_l.append((i1,i2))
 
-    writerDt_csv(f_tsn,ff_l)
+    writerDt_csv(headers,ff_l)
 
     print("数据导出完成～")
 
