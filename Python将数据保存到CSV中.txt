@@ -1,0 +1,96 @@
+#coding:utf-8
+import csv
+
+headers = ['ID','UserName','Password','Age','Country']
+
+rows = [(1001,'qiye','qiye_pass',24,'China'),
+(1002,'Mary','Mary_pass',20,"USA"),
+(1003,"Jack","Jack_pass",20,"USA")
+
+
+]
+
+with open('qiye.csv','w') as f:
+
+f_csv = csv.writer(f)
+
+f_csv.writerow(headers)
+
+f_csv.writerows(rows)
+
+#rows列表中的数据元组,也可以是字典数据
+
+#coding:utf-8
+import csv
+
+headers = ['ID','UserName','Password','Age','Country']
+
+rows = [{'ID':1001,'UserName':"qiye",'Password':"qiye_pass",'Age':24,'Country':"China"},
+{'ID':1002,'UserName':"Mary",'Password':"Mary_pass",'Age':20,'Country':"USA"},
+{'ID':1003,'UserName':"Jack",'Password':"Jack_pass",'Age':20,'Country':"USA"},
+
+
+]
+
+with open('qiye.csv','w') as f:
+
+f_scv = csv.DictWriter(f,headers)
+f_scv.writeheader()
+f_scv.writerows(rows)
+
+ 
+
+读取csv文件
+
+#coding:utf-8
+import csv
+
+with open('qiye.csv','r') as f:
+
+f_csv = csv.reader(f)
+
+headers = next(f_csv)
+
+print headers
+
+for row in f_csv:
+
+print row
+
+ 
+
+输出部分字段
+
+#coding:utf-8
+from collections import namedtuple
+import csv
+
+with open('qiye.csv') as f:
+
+f_csv = csv.reader(f)
+
+headings = next(f_csv)
+
+Row = namedtuple('Row',headings)
+
+for r in f_csv:
+
+row = Row(*r)
+
+print row.UserName,row.Password
+
+print row
+
+#将文件读取到一个字典序列中
+
+#coding:utf-8
+from collections import namedtuple
+import csv
+
+with open('qiye.csv') as f:
+
+f_csv = csv.DictReader(f)
+
+for row in f_csv:
+
+print row.get('UserName'),row.get('Password')
