@@ -105,7 +105,7 @@ async def get_title(i):
 
 if __name__ =="__main__":
     big_list = []
-    TS_lang = 'Python,scrapy,seleinum,flask,sqlalchemy,Django,Golang,beego,buffalo,Echo,Gin,Iris,Revel,perl,java,spring,ruby,rust,C++,Github,git,AWS,Highcharts,pandas,numpy,TCP'
+    TS_lang = 'Python,scrapy,seleinum,flask,sqlalchemy,Django,Golang,beego,buffalo,Echo,Gin,Iris,Revel,perl,java,spring,ruby,rust,C++,Github,git,AWS,Highcharts,pandas,numpy,TCP,Ruby on Rails,shell,ccie'
 
     TS_db = 'mysql,mongodb,redis,Docker,k8s,Postgresql,Oracle'
     TS_certificate = 'CentOS,LPIC,LPIC1,LPIC2,LPIC3,CCNA,CCNP,CFA,TOEIC'
