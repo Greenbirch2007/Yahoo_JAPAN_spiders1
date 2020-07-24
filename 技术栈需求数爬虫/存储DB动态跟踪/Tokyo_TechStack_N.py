@@ -1,10 +1,13 @@
-# ! -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
+
+
 import csv
 import datetime
 import os
 import re
 import time
-
+import sys
+type = sys.getfilesystemencoding()
 import pymysql
 import xlrd
 import requests
@@ -53,8 +56,8 @@ def insertDB(content):
     cursor = connection.cursor()
     try:
 
-        f_44 = "%s," *44
-        cursor.executemany('insert into Tokyo_TSN ({0}) values ({1})'.format(f_FS_DB,f_44[:-1]), content)
+        f_48 = "%s," *48
+        cursor.executemany('insert into Tokyo_TSN ({0}) values ({1})'.format(f_FS_DB,f_48[:-1]), content)
         connection.commit()
         connection.commit()
         connection.close()
@@ -70,8 +73,10 @@ if __name__ == '__main__':
     TS_lang_Web = 'Python,scrapy,flask,sqlalchemy,Django,Golang,beego,buffalo,Echo,Gin,Iris,Revel,perl,java,spring,ruby,rust,C++,Github,git,AWS,Highcharts,pandas,numpy,TCP,Ruby on Rails,shell,ccie'
     TS_db = 'mysql,mongodb,redis,Docker,k8s,Postgresql,Oracle'
     TS_certificate = 'CentOS,LPIC,LPIC1,LPIC2,LPIC3,CCNA,CCNP,CFA,TOEIC'
-    f_FS_web =TS_lang_Web+","+TS_db+","+TS_certificate
-    f_FS_DB =TS_lang_DB+","+TS_db+","+TS_certificate
+    add_cloumn_DB1 = 'API,FinTech,FundManagement,Bloomberg'
+    add_cloumn_Web1 = 'API,FinTech,ファンドマネージャー,Bloomberg'
+    f_FS_web =TS_lang_Web+","+TS_db+","+TS_certificate+","+add_cloumn_Web1
+    f_FS_DB =TS_lang_DB+","+TS_db+","+TS_certificate+","+add_cloumn_DB1
     f_tsn_web = f_FS_web.split(",")
     print(len(f_tsn_web))
 
@@ -88,7 +93,7 @@ if __name__ == '__main__':
                     f = "".join(it.split(","))
                     big_list.append(f)
             else:
-                big_list.append("")
+                big_list.append("0")
         except:
             pass
 
@@ -113,9 +118,15 @@ if __name__ == '__main__':
 # drop table Tokyo_TSN;
 
 
+# 增加列字段
+# API，FinTech，FundManagement，Bloomberg
+# alter table tokyo_tsn add column API float;
+# alter table tokyo_tsn add column FinTech float;
+# alter table tokyo_tsn add column FundManagement float;
+# alter table tokyo_tsn add column Bloomberg float;
+
 # mei
 #*/3 * * * * /home/w/pyenv/bin/python /home/w/SP500_Nasdap100/SP500.py
-
 
 
 
