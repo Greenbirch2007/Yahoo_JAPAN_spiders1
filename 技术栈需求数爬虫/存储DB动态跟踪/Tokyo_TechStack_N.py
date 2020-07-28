@@ -56,8 +56,8 @@ def insertDB(content):
     cursor = connection.cursor()
     try:
 
-        f_48 = "%s," *48
-        cursor.executemany('insert into Tokyo_TSN ({0}) values ({1})'.format(f_FS_DB,f_48[:-1]), content)
+        f_49 = "%s," *49
+        cursor.executemany('insert into Tokyo_TSN ({0}) values ({1})'.format(f_FS_DB,f_49[:-1]), content)
         connection.commit()
         connection.commit()
         connection.close()
@@ -73,8 +73,8 @@ if __name__ == '__main__':
     TS_lang_Web = 'Python,scrapy,flask,sqlalchemy,Django,Golang,beego,buffalo,Echo,Gin,Iris,Revel,perl,java,spring,ruby,rust,C++,Github,git,AWS,Highcharts,pandas,numpy,TCP,Ruby on Rails,shell,ccie'
     TS_db = 'mysql,mongodb,redis,Docker,k8s,Postgresql,Oracle'
     TS_certificate = 'CentOS,LPIC,LPIC1,LPIC2,LPIC3,CCNA,CCNP,CFA,TOEIC'
-    add_cloumn_DB1 = 'API,FinTech,FundManagement,Bloomberg'
-    add_cloumn_Web1 = 'API,FinTech,ファンドマネージャー,Bloomberg'
+    add_cloumn_DB1 = 'API,FinTech,FundManagement,Bloomberg,PHP'
+    add_cloumn_Web1 = 'API,FinTech,ファンドマネージャー,Bloomberg,PHP'
     f_FS_web =TS_lang_Web+","+TS_db+","+TS_certificate+","+add_cloumn_Web1
     f_FS_DB =TS_lang_DB+","+TS_db+","+TS_certificate+","+add_cloumn_DB1
     f_tsn_web = f_FS_web.split(",")
@@ -120,10 +120,11 @@ if __name__ == '__main__':
 
 # 增加列字段
 # API，FinTech，FundManagement，Bloomberg
-# alter table tokyo_tsn add column API float;
-# alter table tokyo_tsn add column FinTech float;
-# alter table tokyo_tsn add column FundManagement float;
-# alter table tokyo_tsn add column Bloomberg float;
+# alter table Tokyo_TSN add column API float;
+# alter table Tokyo_TSN add column FinTech float;
+# alter table Tokyo_TSN add column FundManagement float;
+# alter table Tokyo_TSN add column Bloomberg float;
+#   alter table Tokyo_TSN add column PHP float;
 
 # mei
 #*/3 * * * * /home/w/pyenv/bin/python /home/w/SP500_Nasdap100/SP500.py

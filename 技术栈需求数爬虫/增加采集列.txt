@@ -17,7 +17,7 @@ ALTER TABLE：添加，修改，删除表的列，约束等表的定义。
 
 
 # 增加的kw  API,FinTech, ファンドマネージャー（基金经理）,Bloomberg
-alter table tokyo_tsn add column API float;
-alter table tokyo_tsn add column FinTech float;
-alter table tokyo_tsn add column FundManagement float;
-alter table tokyo_tsn add column Bloomberg float;
+alter table Tokyo_TSN add column API float;
+alter table Tokyo_TSN add column FinTech float;
+alter table Tokyo_TSN add column FundManagement float;
+alter table Tokyo_TSN add column Bloomberg float;
