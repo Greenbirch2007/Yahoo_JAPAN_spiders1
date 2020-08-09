@@ -1,6 +1,6 @@
 
 
 
-0 19 15 * *  /usr/local/bin/python3.6 /root/Tokyo_TechStack_cron.py
+19 19  *   *   * /usr/local/bin/python3.6 /root/Tokyo_TechStack_cron.py
 
 3 19  *   *   *   /usr/local/bin/python3.6 /root/Tokyo_TechStack_N.py

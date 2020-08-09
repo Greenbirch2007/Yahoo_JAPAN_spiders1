@@ -21,7 +21,7 @@ engine_tsn = create_engine('mysql+pymysql://root:123456@localhost:3306/Yahoo_J')
 
 
 
-sql_tsn = 'select LastTime,Python,PHP,FinTech,FundManagement,Bloomberg,Golang,Echo,Gin,perl,java,LPIC,LPIC1,LPIC2,LPIC3,CCNA,CCNP,CFA,TOEIC,API,scrapy,flask,sqlalchemy,Django,beego,buffalo,Iris,Revel,spring,ruby,rust,CPlus,Github,git,AWS,Highcharts,pandas,numpy,TCP,Ruby_on_Rails,shell,ccie,mysql,mongodb,redis,Docker,k8s,Postgresql,Oracle,CentOS  from Tokyo_TSN  ; '
+sql_tsn = 'select LastTime,IT_N3,Python,PHP,laravel,Golang,gorm,Echo,Gin,perl,java,LPIC,selenium,CCNA,CCNP,ruby,rust,CFA,TOEIC,FinTech,FundManagement,Bloomberg,API,LPIC1,LPIC2,LPIC3,scrapy,flask,sqlalchemy,Django,beego,buffalo,Iris,Revel,spring,CPlus,Github,git,AWS,Highcharts,pandas,numpy,TCP,Ruby_on_Rails,shell,ccie,mysql,mongodb,redis,Docker,k8s,Postgresql,Oracle,CentOS  from Tokyo_TSN  ; '
 
 ln = os.getcwd()
 
