@@ -21,7 +21,7 @@ engine_tsn = create_engine('mysql+pymysql://root:123456@localhost:3306/Yahoo_J')
 
 
 
-sql_tsn = 'select fina_Python,fina_ruby,fina_perl,fina_Golang,fina_linux,secu_Python,secu_ruby,secu_perl,secu_Golang,secu_linux,fund_Python,fund_ruby,fund_perl,fund_Golang,fund_linux  from Tokyo_TSN  ; '
+sql_tsn = 'select fina_Python,fina_ruby,fina_perl,fina_Golang,fina_linux,secu_Python,secu_ruby,secu_perl,secu_Golang,secu_linux,fund_Python,fund_ruby,fund_perl,fund_Golang,fund_linux,fina_lpic,secu_lpic,fund_lpic  from Tokyo_TSN  where id >40 ; '
 
 ln = os.getcwd()
 
@@ -41,7 +41,7 @@ def sendmail():
     smtp_ip = 'smtp.qq.com'  # smtp服务器ip,根据发送者邮箱而定
     receiver = ['291109028@qq.com']  # 接收者邮箱
     title = 'Tokyo_TSN'  # 邮件主题
-    content = 'Tokyo_TSN'  # 邮件内容
+    content = 'Tokyo_TSN_f'  # 邮件内容
     annex_path = ln  # 报表存储路径，也是附件路径
 
     try:
