@@ -56,8 +56,8 @@ def insertDB(content):
     cursor = connection.cursor()
     try:
 
-        f_53 = "%s," *53
-        cursor.executemany('insert into Tokyo_TSN ({0}) values ({1})'.format(f_FS_DB,f_53[:-1]), content)
+        f_69 = "%s," *69
+        cursor.executemany('insert into Tokyo_TSN ({0}) values ({1})'.format(f_FS_DB,f_69[:-1]), content)
         connection.commit()
         connection.commit()
         connection.close()
@@ -73,8 +73,8 @@ if __name__ == '__main__':
     TS_lang_Web = 'Python,scrapy,flask,sqlalchemy,Django,Golang,beego,buffalo,Echo,Gin,Iris,Revel,perl,java,spring,ruby,rust,C++,Github,git,AWS,Highcharts,pandas,numpy,TCP,Ruby on Rails,shell,ccie'
     TS_db = 'mysql,mongodb,redis,Docker,k8s,Postgresql,Oracle'
     TS_certificate = 'CentOS,LPIC,LPIC1,LPIC2,LPIC3,CCNA,CCNP,CFA,TOEIC'
-    add_cloumn_DB1 = 'API,FinTech,FundManagement,Bloomberg,PHP,laravel,gorm,IT_N3,selenium,fina_Python,fina_ruby,fina_perl,fina_Golang,fina_linux,secu_Python,secu_ruby,secu_perl,secu_Golang,secu_linux,fund_Python,fund_ruby,fund_perl,fund_Golang,fund_linux'
-    add_cloumn_Web1 = 'API,FinTech,ファンドマネージャー,Bloomberg,PHP,laravel,gorm,IT+N3,selenium,金融業+Python,金融業+ruby,金融業+perl,金融業+Golang,金融業+linux,基金+Python,基金+ruby,基金+perl,基金+Golang,基金+linux,証券+Python,証券+ruby,証券+perl,証券+Golang,証券+linux'
+    add_cloumn_DB1 = 'API,FinTech,FundManagement,Bloomberg,PHP,laravel,gorm,IT_N3,selenium,fina_Python,fina_ruby,fina_perl,fina_Golang,fina_linux,secu_Python,secu_ruby,secu_perl,secu_Golang,secu_linux,fund_Python,fund_ruby,fund_perl,fund_Golang,fund_linux,VBA'
+    add_cloumn_Web1 = 'API,FinTech,ファンドマネージャー,Bloomberg,PHP,laravel,gorm,IT+N3,selenium,金融業+Python,金融業+ruby,金融業+perl,金融業+Golang,金融業+linux,基金+Python,基金+ruby,基金+perl,基金+Golang,基金+linux,証券+Python,証券+ruby,証券+perl,証券+Golang,証券+linux,VBA'
     f_FS_web =TS_lang_Web+","+TS_db+","+TS_certificate+","+add_cloumn_Web1
     f_FS_DB =TS_lang_DB+","+TS_db+","+TS_certificate+","+add_cloumn_DB1
     f_tsn_web = f_FS_web.split(",")
@@ -144,7 +144,7 @@ if __name__ == '__main__':
 #   alter table Tokyo_TSN add column fund_perl float;
 #   alter table Tokyo_TSN add column fund_Golang float;
 #   alter table Tokyo_TSN add column fund_linux float;
-
+# alter table Tokyo_TSN add column VBA float;
 
 
 
