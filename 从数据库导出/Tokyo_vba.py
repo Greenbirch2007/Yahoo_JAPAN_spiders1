@@ -19,13 +19,13 @@ if __name__ == '__main__':
                                  charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
     cur = connection.cursor()
 
-    count_sql = "select count(*) from Tokyo_perl; "
+    count_sql = "select count(*) from Tokyo_vba; "
     cur.execute(count_sql)
     long_count = cur.fetchone()['count(*)']
     # sql 语句
     big_list = []
     for num in range(1, long_count):
-        sql = 'select salary,type,link,job_name  from Tokyo_perl where id = %s ' % num
+        sql = 'select salary,type,link,job_name  from Tokyo_vba where id = %s ' % num
         # #执行sql语句
         cur.execute(sql)
         # #获取所有记录列表
@@ -35,5 +35,5 @@ if __name__ == '__main__':
     # #执行sql语句
 # salary,type,link,job_name
     head = ['salary', 'type', "link", "job_name"]
-    csv_dict_write('{0}\\Tokyo_perl.csv'.format(l_path), head, big_list)
+    csv_dict_write('{0}/Tokyo_vba.csv'.format(l_path), head, big_list)
     print("数据导出完成～")

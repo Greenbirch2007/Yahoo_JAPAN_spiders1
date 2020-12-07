@@ -47,7 +47,7 @@ def remove_block(items):
 async def get_title(i):
 
 
-    url = 'https://job.yahoo.co.jp/jobs/?&keyword=perl&l=東京都&page={0}&ssid=25158ae9-0705-4dd3-85a3-30a1930eb123&comp=1'.format(i)
+    url = 'https://job.yahoo.co.jp/jobs/?&keyword=vba&l=東京都&page={0}&ssid=25158ae9-0705-4dd3-85a3-30a1930eb123&comp=1'.format(i)
 
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
@@ -87,7 +87,7 @@ async def get_title(i):
     connection = pymysql.connect(host='127.0.0.1', port=3306, user='root', password='123456', db='Yahoo_J',charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
     cursor = connection.cursor()
     try:
-        cursor.executemany('insert into Tokyo_perl (salary,type,link,job_name) values (%s,%s,%s,%s)', big_list)
+        cursor.executemany('insert into Tokyo_vba (salary,type,link,job_name) values (%s,%s,%s,%s)', big_list)
         connection.commit()
         connection.close()
         print('向MySQL中添加数据成功！')
@@ -103,7 +103,7 @@ fun_list = (get_title(i) for i in range(1,101))
 loop.run_until_complete(asyncio.gather(*fun_list))
 
 
-# create table Tokyo_perl(
+# create table Tokyo_vba(
 # id int not null primary key auto_increment,
 # salary varchar(50),
 # type varchar(28),
